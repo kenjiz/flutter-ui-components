@@ -1,8 +1,7 @@
+library flutter_ui_components;
 
-import 'flutter_ui_components_platform_interface.dart';
-
-class FlutterUiComponents {
-  Future<String?> getPlatformVersion() {
-    return FlutterUiComponentsPlatform.instance.getPlatformVersion();
-  }
+/// A Calculator.
+class Calculator {
+  /// Returns [value] plus 1.
+  int addOne(int value) => value + 1;
 }
