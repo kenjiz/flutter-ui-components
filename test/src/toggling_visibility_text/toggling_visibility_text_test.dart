@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_ui_components/src/toggling_visibility_text/mask_direction.dart';
-import 'package:flutter_ui_components/src/toggling_visibility_text/toggling_visibility_text.dart';
+import 'package:flutter_ui_components/flutter_ui_components.dart';
 
 void main() {
   const text = 'Hello, World!';
