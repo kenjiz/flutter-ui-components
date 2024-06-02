@@ -31,10 +31,10 @@ jobs:
           flutter-version: ${{ steps.fvm_config.outputs.FLUTTER_VERSION }}
 
       - name: Download dependencies
-        run: fvm flutter pub get
+        run: flutter pub get
 
       - name: Analyze
-        run: fvm flutter analyze
+        run: flutter analyze
 
       - name: Test
-        run:  fvm flutter test
+        run:  flutter test
