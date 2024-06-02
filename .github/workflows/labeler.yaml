@@ -22,6 +22,6 @@ jobs:
     - name: Add labels to PR
       uses: srvaroa/labeler@v1.8.0
       with:
-        config_path: .github/labeler-config.yml
+        config_path: .github/labeler-config.yaml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
