@@ -2,19 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_ui_components/flutter_ui_components.dart';
 
+import '../../helper/setup_material_app.dart';
+
 void main() {
   const text = 'Hello, World!';
-
-  Future<void> setupMaterialApp(
-    WidgetTester tester,
-    Widget widget,
-  ) async {
-    await tester.pumpWidget(
-      MaterialApp(
-        home: Scaffold(body: widget),
-      ),
-    );
-  }
 
   testWidgets('should the default behavior is working', (WidgetTester tester) async {
     await setupMaterialApp(

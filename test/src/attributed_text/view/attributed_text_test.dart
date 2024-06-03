@@ -4,6 +4,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
 import 'package:styled_text/styled_text.dart';
 
+import '../../../helper/setup_material_app.dart';
+
 void main() {
   testWidgets('should attributed text is working with all properties', (WidgetTester tester) async {
     const String text = 'Hello world!';
@@ -11,16 +13,13 @@ void main() {
     const TextAlign textAlign = TextAlign.center;
     const int maxLines = 2;
 
-    await tester.pumpWidget(
-      const MaterialApp(
-        home: Scaffold(
-          body: AttributedText(
-            text: text,
-            textStyle: textStyle,
-            textAlign: textAlign,
-            maxLines: maxLines,
-          ),
-        ),
+    await setupMaterialApp(
+      tester,
+      const AttributedText(
+        text: text,
+        textStyle: textStyle,
+        textAlign: textAlign,
+        maxLines: maxLines,
       ),
     );
 
