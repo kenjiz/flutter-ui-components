@@ -10,6 +10,12 @@ class FetchedList<T> {
     this.filter,
   });
 
+  FetchedList.emtpy()
+      : hasNext = false,
+        items = <T>[],
+        nextPage = null,
+        filter = null;
+
   /// {@macro hasNext}
   final bool hasNext;
 
@@ -22,8 +28,8 @@ class FetchedList<T> {
   /// {@macro filter}
   final Filter? filter;
 
-  FetchedList<T> operator +(FetchedList<T> other) {
-    return FetchedList(
+  FetchedList<T> operator +(covariant FetchedList<T> other) {
+    return FetchedList<T>(
       hasNext: hasNext || other.hasNext,
       items: [...items, ...other.items],
       nextPage: other.nextPage,

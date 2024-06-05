@@ -62,7 +62,7 @@ class _PaginatedListViewState<T> extends State<PaginatedListView<T>> {
   Widget build(BuildContext context) {
     return BlocSelector<FetchListBloc<T>, FetchListState<T>, int>(
       bloc: fetchListBloc,
-      selector: (state) => state.items.length,
+      selector: (state) => state.list.items.length,
       builder: (context, length) {
         return RefreshIndicator.adaptive(
           onRefresh: () async => fetchListBloc.add(const FetchItems(refresh: true)),
@@ -90,7 +90,7 @@ class _PaginatedListViewState<T> extends State<PaginatedListView<T>> {
               return widget.itemBuilder(
                 context,
                 index,
-                fetchListBloc.state.items[index],
+                fetchListBloc.state.list.items[index],
               );
             },
           ),

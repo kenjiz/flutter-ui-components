@@ -12,7 +12,7 @@ class FetchListBloc<T> extends Bloc<FetchListEvent, FetchListState<T>> {
     required this.fetchListItems,
     FetchListState<T>? initialState,
     Filter? filter,
-  }) : super(initialState ?? FetchListState(filter: filter, items: const [])) {
+  }) : super(initialState ?? FetchListState(filter: filter, list: FetchedList<T>.emtpy())) {
     //
     on<FetchItems>(
       _onFetchItems,
@@ -77,13 +77,13 @@ class FetchListBloc<T> extends Bloc<FetchListEvent, FetchListState<T>> {
           status: StateStatus.success,
           hasNext: fetchedList.hasNext,
           nextPage: fetchedList.nextPage ?? 1,
-          items: reset ? fetchedList.items : state.items + fetchedList.items,
+          list: reset ? fetchedList : state.list + fetchedList,
           filter: fetchedList.filter ?? newFilter,
         ),
       );
     } catch (exception) {
       // update the state as error
-      if (state.items.isEmpty || reset) {
+      if (state.list.items.isEmpty || reset) {
         emit(
           state.copyWith(
             status: StateStatus.failure,

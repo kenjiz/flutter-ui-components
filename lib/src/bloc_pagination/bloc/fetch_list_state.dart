@@ -4,7 +4,7 @@ class FetchListState<T> extends Equatable {
   //
   /// State class that holds the state of a paginated list fetched from an API.
   const FetchListState({
-    required this.items,
+    required this.list,
     this.nextPage = 1,
     this.status = StateStatus.loading,
     this.paginationStatus = StateStatus.empty,
@@ -26,7 +26,7 @@ class FetchListState<T> extends Equatable {
   /// {@template items}
   /// A list of [T] items fetched from the API.
   /// {@endtemplate}
-  final List<T> items;
+  final FetchedList<T> list;
 
   /// {@template status}
   /// A [StateStatus] enum indicating the status of the API call (loading, success, failure, or empty).
@@ -59,7 +59,7 @@ class FetchListState<T> extends Equatable {
     return [
       hasNext,
       nextPage,
-      items,
+      list,
       status,
       error,
       filter,
@@ -70,7 +70,7 @@ class FetchListState<T> extends Equatable {
   FetchListState<T> copyWith({
     bool? hasNext,
     int? nextPage,
-    List<T>? items,
+    FetchedList<T>? list,
     StateStatus? status,
     Object? error,
     Filter? filter,
@@ -79,7 +79,7 @@ class FetchListState<T> extends Equatable {
     return FetchListState<T>(
       hasNext: hasNext ?? this.hasNext,
       nextPage: nextPage ?? this.nextPage,
-      items: items ?? this.items,
+      list: list ?? this.list,
       status: status ?? this.status,
       error: error ?? this.error,
       filter: filter ?? this.filter,
