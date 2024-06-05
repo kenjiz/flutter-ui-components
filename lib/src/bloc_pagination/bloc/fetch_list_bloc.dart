@@ -27,7 +27,7 @@ class FetchListBloc<T> extends Bloc<FetchListEvent, FetchListState<T>> {
   /// @param int `page` The page number to fetch.
   /// @param Filter `filter` The filter to apply.
   ///
-  final Future<FetchedList<T>> Function(int page, [Filter? filter]) fetchListItems;
+  final Future<FetchedList<T>> Function(int page, Filter? filter) fetchListItems;
 
   /// Event handler for [FetchItems] events.
   /// It updates the state based on the event and fetches a list of items using the fetchListItems function.
