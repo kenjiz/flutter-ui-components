@@ -1,6 +1,9 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:equatable/equatable.dart';
+
 import 'package:flutter_ui_components/flutter_ui_components.dart';
 
-class FetchedList<T> {
+class FetchedList<T> extends Equatable {
   /// A generic class that represents a list of fetched items from an API.
   ///
   const FetchedList({
@@ -50,4 +53,7 @@ class FetchedList<T> {
       filter: filter ?? this.filter,
     );
   }
+
+  @override
+  List<Object?> get props => [hasNext, items, nextPage, filter];
 }
