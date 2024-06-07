@@ -1,6 +1,6 @@
 part of 'fetch_list_bloc.dart';
 
-sealed class FetchListEvent extends Equatable {
+class FetchListEvent extends Equatable {
   //
   /// Used to represent an event that can be dispatched to a [FetchListBloc]
   /// to trigger a fetch of a paginated list from an API.

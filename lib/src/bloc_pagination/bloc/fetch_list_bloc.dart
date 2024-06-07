@@ -12,7 +12,7 @@ class FetchListBloc<T> extends Bloc<FetchListEvent, FetchListState<T>> {
     required this.fetchListItems,
     FetchListState<T>? initialState,
     Filter? filter,
-  }) : super(initialState ?? FetchListState(filter: filter, list: FetchedList<T>.emtpy())) {
+  }) : super(initialState ?? FetchListState(filter: filter, list: FetchedList<T>.empty())) {
     //
     on<FetchItems>(
       _onFetchItems,

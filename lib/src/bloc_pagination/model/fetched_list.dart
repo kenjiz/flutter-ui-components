@@ -13,7 +13,7 @@ class FetchedList<T> extends Equatable {
     this.filter,
   });
 
-  FetchedList.emtpy()
+  FetchedList.empty()
       : hasNext = false,
         items = <T>[],
         nextPage = null,

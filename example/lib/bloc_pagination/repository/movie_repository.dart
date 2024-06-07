@@ -11,11 +11,12 @@ class MovieRepository {
 
   Future<FetchedList<Movie>> fetchPopularMovies(int page, Filter? filter) async {
     try {
-      final response = await service.fetchPopularMovies(page: page);
+      final response = await service.fetchPopularMovies(page: page, filter: filter);
       return FetchedList<Movie>(
         hasNext: response.totalPages >= page,
         items: response.results,
         nextPage: response.page + 1,
+        filter: filter,
       );
     } catch (e) {
       rethrow;
