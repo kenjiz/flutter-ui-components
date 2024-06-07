@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_ui_components/flutter_ui_components.dart';
+import 'package:flutter_ui_components/src/bloc_pagination/example/model/user.dart';
+import 'package:flutter_ui_components/src/bloc_pagination/example/view/pagination_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:bloc_test/bloc_test.dart';
-
-import 'test_widget/model/user.dart';
-
-import 'test_widget/view/pagination_test.dart';
 
 class MockFetchListBloc extends MockBloc<FetchListEvent, FetchListState<User>> implements FetchListBloc<User> {}
 
